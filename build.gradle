@@ -1,0 +1,45 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'com.baofeidyz.baotool'
+version = '1.0.0-SNAPSHOT'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'baotool'
+                description = 'Another Java Tool Library'
+                url = 'https://github.com/baofeidyz/baotool'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'baofeidyz'
+                        name = 'baofeidyz'
+                        email = 'baofeidyz@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/baofeidyz/baotool.git'
+                    developerConnection = 'scm:git:ssh://github.com:baofeidyz/baotool.git'
+                    url = 'https://github.com/baofeidyz/baotool/tree/main'
+                }
+            }
+        }
+    }
+}
